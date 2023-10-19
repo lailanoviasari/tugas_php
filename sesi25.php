@@ -14,7 +14,7 @@ if ($number % 2 == 0) {
 echo "Tugas no 2 : <br>";
 $year = 2024;
 
-if ($year % 4 == 0) {
+if ($year%4 == 0 || $year%400 == 0) {
     echo "Tahun $year, adalah tahun kabisat <br> <br>";
 } else {
     echo "Tahun $year, bukan tahun kabisat <br> <br>";
