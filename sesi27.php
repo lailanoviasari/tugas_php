@@ -34,68 +34,53 @@
     <!-- end :: Praktek Individu 1 : -->
     <br>
     <!-- begin :: Praktek Individu 2 : -->
-    Praktek Individu 2 :
+    Praktek Individu 2 : 
     <table>
         <?php
-        for ($i = 0; $i <= 10; $i++) { ?>
-            <tr>
-                <?php
-                if ($i == 0) {
+        for ($i = 0; $i <= 10; $i++) {
+            echo "<tr>";
+            if ($i == 0) {
+                for ($j = 0; $j < 3; $j++) {
+                    echo "<td style='background-color: DodgerBlue'>";
+                    if ($j == 0) {
+                        echo "No";
+                    } elseif ($j == 1) {
+                        echo "Nama";
+                    } else {
+                        echo "Kelas";
+                    }
+                    echo "</td>";
+                }
+            } else {
+                if ($i % 2 == 0) {
                     for ($j = 0; $j < 3; $j++) {
-                ?>
-                        <td style='background-color: DodgerBlue'>
-                            <?php
-                            if ($j == 0) {
-                                echo "No";
-                            } elseif ($j == 1) {
-                                echo "Nama";
-                            } else {
-                                echo "Kelas";
-                            }
-                            ?>
-                        </td>
-                        <?php
+                        echo "<td>";
+                        if ($j == 0) {
+                            echo $i;
+                        } elseif ($j == 1) {
+                            echo "Nama ke-$i";
+                        } else {
+                            $minus = 11;
+                            echo "Kelas ", $minus - $i;
+                        }
+                        echo "</td>";
                     }
                 } else {
-                    if ($i % 2 == 0) {
-                        for ($j = 0; $j < 3; $j++) {
-                        ?>
-                            <td>
-                                <?php
-                                if ($j == 0) {
-                                    echo $i;
-                                } elseif ($j == 1) {
-                                    echo "Nama ke-$i";
-                                } else {
-                                    $minus = 11;
-                                    echo "Kelas ", $minus - $i;
-                                }
-                                ?>
-                            </td>
-                        <?php
+                    for ($j = 0; $j < 3; $j++) {
+                        echo "<td style='background-color: LightGray'>";
+                        if ($j == 0) {
+                            echo $i;
+                        } elseif ($j == 1) {
+                            echo "Nama ke-$i";
+                        } else {
+                            $minus = 11;
+                            echo "Kelas ", $minus - $i;
                         }
-                    } else {
-                        for ($j = 0; $j < 3; $j++) {
-                        ?>
-                            <td style='background-color: LightGray'>
-                                <?php
-                                if ($j == 0) {
-                                    echo $i;
-                                } elseif ($j == 1) {
-                                    echo "Nama ke-$i";
-                                } else {
-                                    $minus = 11;
-                                    echo "Kelas ", $minus - $i;
-                                }
-                                ?>
-                            </td>
-                <?php
-                        }
+                        echo "</td>";
                     }
                 }
-                ?>
-            </tr>
-        <?php
+            }
+            echo "</tr>";
         }
         ?>
     </table>
