@@ -29,7 +29,10 @@ $Q_supplier = mysqli_query($connection, "SELECT * FROM supplier;");
                 <div class="collapse navbar-collapse position-absolute top-50 start-50 translate-middle" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="index.php">Penjualan</a>
+                            <a class="nav-link" aria-current="page" href="index.php">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="penjualan.php">Penjualan</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" aria-current="page" href="pelanggan.php">Pelanggan</a>
