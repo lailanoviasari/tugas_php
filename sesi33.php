@@ -33,6 +33,7 @@ $array_no3 = array(7, 3, 4, 9);
 
 $total = 0;
 
+# perulangan untuk menghitung total dari penjumlahan seluruh data array
 foreach ($array_no3 as $key => $value) {
     $total += $value;
 }
@@ -44,6 +45,7 @@ echo '<br><br><hr><br>';
 # NOMOR 4
 echo 'Nomor 4 <br><br>';
 
+#perulangan untuk mencetak dan mengalikan angka 1 dengan angka 1-10
 for ($i=1; $i <= 10; $i++) { 
     echo '1x'.$i.'='.(1*$i).'<br>';
 }
