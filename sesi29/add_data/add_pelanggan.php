@@ -51,7 +51,7 @@
                         <a href="../pelanggan.php" name="back" class="btn btn-primary">Back</a>
                     </div>
                     <div class="col-6 text-end">
-                        <button type="submit" name="submit" value="Submit" class="btn btn-primary">Submit</button>
+                        <button type="submit" name="submit" value="Submit" class="btn btn-primary" onclick="return alert('Success add a data')">Submit</button>
                     </div>
                 </div>
             </form>

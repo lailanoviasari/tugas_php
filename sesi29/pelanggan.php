@@ -59,13 +59,13 @@ $pelanggan = mysqli_query($connection, "SELECT * FROM pelanggan;");
             <hr>
             <table id="table_pelanggan" class="table table-responsive table-dark table-hover" style="width: 1000px;">
                 <thead>
-                    <tr class="text-center">
-                        <th class="border">ID Pelanggan</th>
-                        <th class="border">Nama</th>
-                        <th class="border">Jenis Kelamin</th>
-                        <th class="border">Telpon</th>
-                        <th class="border">Alamat</th>
-                        <th class="border">Aksi</th>
+                    <tr class="">
+                        <th class="border text-center" width="15%">ID Pelanggan</th>
+                        <th class="border text-center">Nama</th>
+                        <th class="border text-center">Jenis Kelamin</th>
+                        <th class="border text-center">Telpon</th>
+                        <th class="border text-center">Alamat</th>
+                        <th class="border text-center" width="15%">Aksi</th>
                     </tr>
                 </thead>
                 <tbody>

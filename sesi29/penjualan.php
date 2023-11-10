@@ -22,7 +22,7 @@ $penjualan = mysqli_query($connection, "SELECT *, penjualan.id, pelanggan.nama F
 
 <body class="bg-secondary text-light">
     <div class="container-fluid">
-        <nav class="navbar navbar-expand-lg bg-secondary position-relative">
+        <nav class="navbar sticky-top navbar-expand-lg bg-secondary position-relative">
             <a class="navbar-brand px-3" href="#">
                 <img src="letter-p.png" alt="Bootstrap" width="40" height="40">
             </a>
@@ -57,13 +57,13 @@ $penjualan = mysqli_query($connection, "SELECT *, penjualan.id, pelanggan.nama F
             <hr>
             <table id="table_penjualan" class="table table-responsive table-dark table-hover" style="width: 1000px;">
                 <thead>
-                    <tr class="text-center">
-                        <th class="border">ID Penjualan</th>
-                        <th class="border">Tanggal</th>
-                        <th class="border">Keterangan</th>
-                        <th class="border">Total</th>
-                        <th class="border">Nama Pelanggan</th>
-                        <th class="border">Aksi</th>
+                    <tr class="">
+                        <th class="border text-center" width="15%">ID Penjualan</th>
+                        <th class="border text-center">Tanggal</th>
+                        <th class="border text-center">Keter text-centerangan</th>
+                        <th class="border text-center">Total</th>
+                        <th class="border text-center">Nama Pelanggan</th>
+                        <th class="border text-center" width="10%">Aksi</th>
                     </tr>
                 </thead>
                 <tbody>

@@ -22,7 +22,7 @@ $produk = mysqli_query($connection, "SELECT *, produk.id, nama FROM produk JOIN 
 
 <body class="bg-secondary text-light">
     <div class="container-fluid">
-        <nav class="navbar navbar-expand-lg bg-secondary position-relative">
+        <nav class="navbar sticky-top navbar-expand-lg bg-secondary position-relative">
             <a class="navbar-brand px-3" href="#">
                 <img src="letter-p.png" alt="Bootstrap" width="40" height="40">
             </a>
@@ -59,15 +59,15 @@ $produk = mysqli_query($connection, "SELECT *, produk.id, nama FROM produk JOIN 
             <hr>
             <table id="table_produk" class="table table-responsive table-dark table-hover" style="width: 1000px;">
                 <thead>
-                    <tr class="text-center">
-                        <th class="border">ID Produk</th>
-                        <th class="border">Kode Produk</th>
-                        <th class="border">Nama Produk</th>
-                        <th class="border">Harga</th>
-                        <th class="border">Stok</th>
-                        <th class="border">Satuan</th>
-                        <th class="border">Nama Supplier</th>
-                        <th class="border">Aksi</th>
+                    <tr class="">
+                        <th class="border text-center" width="15%">ID Produk</th>
+                        <th class="border text-center">Kode Produk</th>
+                        <th class="border text-center">Nama Produk</th>
+                        <th class="border text-center">Harga</th>
+                        <th class="border text-center">Stok</th>
+                        <th class="border text-center">Satuan</th>
+                        <th class="border text-center">Nama Supplier</th>
+                        <th class="border text-center" width="10%">Aksi</th>
                     </tr>
                 </thead>
                 <tbody>

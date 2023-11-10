@@ -39,19 +39,19 @@ foreach ($penjualan as $key => $data) {
             <form action="proses_edit/edit_data_penjualan.php?id=<?php echo $penjualan_id ?>" method="post">
                 <div class="mb-3">
                     <label for="tanggal_penjualan" class="form-label">Tanggal Penjualan</label>
-                    <input type="date" class="form-control" id="tanggal_penjualan" name="tanggal_penjualan" value="<?php echo $tanggal ?>" required="">
+                    <input type="date" class="form-control" id="tanggal_penjualan" name="tanggal_penjualan" value="<?php echo $tanggal ?>" required="" onchange="change()">
                 </div>
                 <div class="mb-3">
                     <label for="keterangan" class="form-label">Keterangan</label>
-                    <input type="text" class="form-control" id="keterangan" name="keterangan" value="<?php echo $keterangan ?>" required="">
+                    <input type="text" class="form-control" id="keterangan" name="keterangan" value="<?php echo $keterangan ?>" required="" onchange="change()">
                 </div>
                 <div class="mb-3">
                     <label for="total" class="form-label">Total</label>
-                    <input type="text" class="form-control" id="total" name="total" value="<?php echo $total ?>" required="">
+                    <input type="text" class="form-control" id="total" name="total" value="<?php echo $total ?>" required="" onchange="change()">
                 </div>
                 <div class="mb-3">
                     <label for="id" class="form-label">ID Pelanggan</label>
-                    <select class="form-select" name="pelanggan_id" id="pelanggan_id">
+                    <select class="form-select" name="pelanggan_id" id="pelanggan_id" onchange="change()">
                         <?php foreach ($pelanggan as $key => $data) {
                             if ($data['id'] == $pelanggan_id) { ?>
                                 <option value="<?php echo $data['id'] ?>" selected><?php echo $data["id"] . ' | ' .  $data["nama"] ?></option>
@@ -64,10 +64,10 @@ foreach ($penjualan as $key => $data) {
                 </div>
                 <div class="row">
                     <div class="col-6 text-start">
-                        <a href="../penjualan.php" name="back" class="btn btn-primary">Back</a>
+                        <a href="../penjualan.php" id="back" name="back" class="btn btn-primary">Back</a>
                     </div>
                     <div class="col-6 text-end">
-                        <button type="submit" name="submit" value="Submit" class="btn btn-primary" onclick="return confirm('Are you sure want to save your changes?');">Submit</button>
+                        <button type="submit" id="save" name="save" class="btn btn-primary" onclick="return confirm('Are you sure want to save your changes?')">Save</button>
                     </div>
                 </div>
             </form>

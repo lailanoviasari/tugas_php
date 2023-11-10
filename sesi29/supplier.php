@@ -22,7 +22,7 @@ $suppliers = mysqli_query($connection, "SELECT * FROM supplier;");
 
 <body class="bg-secondary text-light">
     <div class="container-fluid">
-        <nav class="navbar navbar-expand-lg bg-secondary position-relative">
+        <nav class="navbar sticky-top navbar-expand-lg bg-secondary position-relative">
             <a class="navbar-brand px-3" href="#">
                 <img src="letter-p.png" alt="Bootstrap" width="40" height="40">
             </a>
@@ -57,12 +57,12 @@ $suppliers = mysqli_query($connection, "SELECT * FROM supplier;");
             <hr>
             <table id="table_supplier" class="table table-responsive table-dark table-hover" style="width: 1000px;">
                 <thead>
-                    <tr class="text-center">
-                        <th class="border">ID Supplier</th>
-                        <th class="border">Nama</th>
-                        <th class="border">Telpon</th>
-                        <th class="border">Alamat</th>
-                        <th class="border">Aksi</th>
+                    <tr class="">
+                        <th class="border text-center" width="15%">ID Supplier</th>
+                        <th class="border text-center">Nama</th>
+                        <th class="border text-center">Telpon</th>
+                        <th class="border text-center">Alamat</th>
+                        <th class="border text-center" width="10%">Aksi</th>
                     </tr>
                 </thead>
                 <tbody>

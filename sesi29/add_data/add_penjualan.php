@@ -75,14 +75,6 @@ $pelanggan = mysqli_query($connection, "SELECT * FROM pelanggan");
     </script>
     <!-- end :: keyup ket and total -->
 
-    <!-- begin :: focus on tanggal_penjualan -->
-    <script>
-        $(document).focus(function() {
-            $("#tanggal_penjualan")
-        })
-    </script>
-    <!-- end :: focus on tanggal_penjualan -->
-
 </body>
 
 </html>

@@ -33,7 +33,7 @@ echo $nama;
 <body class="bg-secondary">
     <div class="card shadow bg-dark text-light w-25" style="height: 500px;; margin: 100px auto;">
         <div class="card-body">
-            <h4 class="text-center m-3">Tambah Data Supplier</h4>
+            <h4 class="text-center m-3">Edit Data Supplier</h4>
             <hr>
             <form action="proses_edit/edit_data_supplier.php?id=<?php echo $supplier_id?>" method="post">
                 <div class="mb-3">
