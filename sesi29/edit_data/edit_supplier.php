@@ -35,10 +35,10 @@ echo $nama;
         <div class="card-body">
             <h4 class="text-center m-3">Edit Data Supplier</h4>
             <hr>
-            <form action="proses_edit/edit_data_supplier.php?id=<?php echo $supplier_id?>" method="post">
+            <form action="proses_edit/edit_data_supplier.php?id=<?php echo $supplier_id ?>" method="post">
                 <div class="mb-3">
                     <label class="form-label">Nama</label>
-                        <input type="text" class="form-control" id="nama" name="nama" value="<?php echo $nama ?>" required="">
+                    <input type="text" class="form-control" id="nama" name="nama" value="<?php echo $nama ?>" required="">
                 </div>
                 <div class="mb-3">
                     <label for="telpon" class="form-label">Telpon</label>
@@ -53,12 +53,34 @@ echo $nama;
                         <a href="../supplier.php" name="back" class="btn btn-primary">Back</a>
                     </div>
                     <div class="col-6 text-end">
-                        <button type="submit" name="submit" value="Submit" class="btn btn-primary" onclick="return confirm('Are you sure want to save your changes?');">Submit</button>
+                        <button type="submit" name="submit" value="Submit" class="btn btn-primary" onclick="edit_data(<?php echo $supplier_id ?>)">Submit</button>
                     </div>
                 </div>
             </form>
         </div>
     </div>
+
+    <!-- begin :: CDN jquery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <!-- end :: CDN jquery -->
+
+    <!-- begin :: jquery edit data supplier -->
+    <script>
+        function edit_data(supplier_id) {
+            $.ajax({
+                method: 'POST',
+                url: 'proses_edit/edit_data_supplier.php?id=' + supplier_id,
+                data: {
+                    supplier_id: supplier_id
+                },
+                success: function(result) {
+                    confirm('Are you sure want to save your change?')
+                }
+            })
+        }
+    </script>
+    <!-- end :: jquery edit data supplier -->
+
 </body>
 
 </html>

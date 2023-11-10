@@ -80,12 +80,34 @@ foreach ($produk as $key => $data) {
                         <a href="../produk.php" name="back" class="btn btn-primary">Back</a>
                     </div>
                     <div class="col-6 text-end">
-                        <button type="submit" name="submit" value="Submit" class="btn btn-primary" onclick="return confirm('Are you sure want to save your changes?');">Submit</button>
+                        <button type="submit" name="submit" value="Submit" class="btn btn-primary" onclick="edit_data(<?php $produk_id ?>)">Submit</button>
                     </div>
                 </div>
             </form>
         </div>
     </div>
+
+    <!-- begin :: CDN jquery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <!-- end :: CDN jquery -->
+
+    <!-- begin :: jquery edit data produk -->
+    <script>
+        function edit_data(produk_id) {
+            $.ajax({
+                method: 'POST',
+                url: 'proses_edit/edit_data_produk.php?id=' + produk_id,
+                data: {
+                    produk_id: produk_id
+                },
+                success: function(result) {
+                    confirm('Are you sure want to save your change?')
+                }
+            })
+        }
+    </script>
+    <!-- end :: jquery edit data produk -->
+
 
 </body>
 

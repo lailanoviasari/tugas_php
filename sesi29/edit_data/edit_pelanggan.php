@@ -35,18 +35,22 @@ foreach ($pelanggan as $key => $data) {
             <form action="proses_edit/edit_data_pelanggan.php?id=<?php echo $pelanggan_id ?>" method="post">
                 <div class="mb-3">
                     <label class="form-label">Nama</label>
-                        <input type="text" class="form-control" id="nama" name="nama" value="<?php echo $nama ?>" required="">
+                    <input type="text" class="form-control" id="nama" name="nama" value="<?php echo $nama ?>" required="">
                 </div>
                 <div class="row mb-3">
                     <label for="jenis_kelamin" class="form-label">Jenis Kelamin</label>
                     <div class="form-check col-5 ms-3">
-                        <input class="form-check-input" type="radio" name="jenis_kelamin" id="male" value="0" <?php if($jenis_kelamin == 'pria') {echo 'checked';} ?>>
+                        <input class="form-check-input" type="radio" name="jenis_kelamin" id="male" value="0" <?php if ($jenis_kelamin == 'pria') {
+                                                                                                                    echo 'checked';
+                                                                                                                } ?>>
                         <label class="form-check-label" for="male">
                             Pria
                         </label>
                     </div>
                     <div class="form-check col-5 ms-3">
-                        <input class="form-check-input" type="radio" name="jenis_kelamin" id="female" value="1"  <?php if($jenis_kelamin == 'wanita') {echo 'checked';} ?>>
+                        <input class="form-check-input" type="radio" name="jenis_kelamin" id="female" value="1" <?php if ($jenis_kelamin == 'wanita') {
+                                                                                                                    echo 'checked';
+                                                                                                                } ?>>
                         <label class="form-check-label" for="female">
                             Wanita
                         </label>
@@ -65,12 +69,33 @@ foreach ($pelanggan as $key => $data) {
                         <a href="../pelanggan.php" name="back" class="btn btn-primary">Back</a>
                     </div>
                     <div class="col-6 text-end">
-                        <button type="submit" name="submit" value="Submit" class="btn btn-primary" onclick="return confirm('Are you sure want to save your changes?');">Submit</button>
+                        <button type="submit" name="submit" value="Submit" class="btn btn-primary" onclick="edit_data(<?php echo $pelanggan_id ?>)">Submit</button>
                     </div>
                 </div>
             </form>
         </div>
     </div>
+
+    <!-- begin :: CDN jquery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <!-- end :: CDN jquery -->
+
+    <!-- begin :: jquery edit data pelanggan -->
+    <script>
+        function edit_data(pelanggan_id) {
+            $.ajax({
+                method: 'POST',
+                url: 'proses_edit/edit_data_pelanggan.php?id=' + pelanggan_id,
+                data: {
+                    pelanggan_id: pelanggan_id
+                },
+                success: function(result) {
+                    confirm('Are you sure want to save your change?')
+                }
+            })
+        }
+    </script>
+    <!-- end :: jquery edit data pelanggan -->
 
 </body>
 
