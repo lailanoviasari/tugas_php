@@ -13,41 +13,43 @@ $pelanggan = mysqli_query($connection, "SELECT * FROM pelanggan;");
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Daftar Pelanggan</title>
 
+    <!-- begin :: CDN Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <!-- end :: CDN Bootstrap -->
+
 </head>
 
-<body>
-    <div class="container-xxl">
-        <nav class="navbar navbar-expand-lg bg-light position-relative">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">
-                    <img src="letter-p.png" alt="Bootstrap" width="30" height="24">
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse position-absolute top-50 start-50 translate-middle" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="index.php">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="penjualan.php">Penjualan</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active bg-secondary text-light" aria-current="page" href="pelanggan.php">Pelanggan</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="produk.php">Produk</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="supplier.php">Supplier</a>
-                        </li>
-                    </ul>
-                </div>
+<body class="bg-secondary text-light">
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg bg-secondary position-relative">
+            <a class="navbar-brand px-3" href="#">
+                <img src="letter-p.png" alt="Bootstrap" width="40" height="40">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse position-absolute top-50 start-50 translate-middle" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link text-light" aria-current="page" href="index.php">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" aria-current="page" href="penjualan.php">Penjualan</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active bg-dark text-light" aria-current="page" href="pelanggan.php">Pelanggan</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" aria-current="page" href="produk.php">Produk</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" aria-current="page" href="supplier.php">Supplier</a>
+                    </li>
+                </ul>
             </div>
         </nav>
-        <div class="position-absolute top-10 start-50 translate-middle-x my-5">
+        <div class="position-absolute top-10 start-50 translate-middle-x my-2 py-3 px-5 bg-dark">
             <h4 class="text-center m-3">Daftar Data Pelanggan</h4>
             <div class="text-center">
                 <div class="text-center">
@@ -55,12 +57,12 @@ $pelanggan = mysqli_query($connection, "SELECT * FROM pelanggan;");
                 </div>
             </div>
             <hr>
-            <table class="table table-dark table-hover" style="width:800px;">
+            <table id="table_pelanggan" class="table table-responsive table-dark table-hover" style="width: 1000px;">
                 <thead>
                     <tr class="text-center">
-                        <th class="border" style="width:15%;">ID Pelanggan</th>
+                        <th class="border">ID Pelanggan</th>
                         <th class="border">Nama</th>
-                        <th class="border" style="width:15%;">Jenis Kelamin</th>
+                        <th class="border">Jenis Kelamin</th>
                         <th class="border">Telpon</th>
                         <th class="border">Alamat</th>
                         <th class="border">Aksi</th>
@@ -93,6 +95,22 @@ $pelanggan = mysqli_query($connection, "SELECT * FROM pelanggan;");
             </table>
         </div>
     </div>
+
+    <!-- begin :: CDN JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- end :: CDN JQuery -->
+
+    <!-- begin :: CDN Datatable -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.css" />
+    <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.js"></script>
+    <!-- end :: CDN Datatable -->
+
+    <!-- begin :: JS -->
+    <script>
+        let table = new DataTable('#table_pelanggan');
+    </script>
+    <!-- end :: JS -->
+
 </body>
 
 </html>
